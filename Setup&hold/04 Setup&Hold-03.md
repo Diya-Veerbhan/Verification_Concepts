@@ -58,7 +58,7 @@ Try to imagine the waveforms; it's easy
 * Tclk(min) = 2+5+2=9ns
 * <b> Remember : Ts = Td(max)-Tclk(min) ; Th = Tclk(max)-Td(min) We wont use these equations but for hold
   violation data min delay and clk max delay is considered and similarly for setup violation; in order to remember these points, one should remeber these eqns.
-* Also for setup time one extra clk period is added to Tclk. If not given, then Tclk(max) is considered to be clk period </b>
+* For setup violation calculation, not for setup time calculation : Also for setup time one extra clk period is added to Tclk. If not given, then Tclk(max) is considered to be clk period </b>
 
 * Hold volation :
   ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/724ccc9d-9c0c-4f64-b0ee-f0ba49361dac)
@@ -73,5 +73,26 @@ Try to imagine the waveforms; it's easy
   * Tdata(max) + Tsetup <= Tclk(min) + Tclk(period)/Tclk(max)
   * 26 + 4 <= 9 + 15 ; 30<= 24 : Setup violation
   * Now, to remove this violation clk time period can be increased, or less buffer delay in data path
+ 
+    ## Problem 2
+    ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/76905e70-213a-4425-a12b-b595a6cd9c1c)
+
+    ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/308a0728-a506-4361-bc7f-d56c64a3a543)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/03aaed6a-49cd-4ce9-8827-7a8e4c309b74)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/984265d5-2de0-44bb-9455-d6b1b9125b92)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/42f86514-3398-497f-8b62-9802b076a18d)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/0ee1a7e9-4cf6-4d73-9e65-665ce00cfce6)
+
+
+## Problem 3
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/47353e82-a3a4-42e1-8715-10a331a2541e)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/c28d6e03-6ff1-4e79-88fe-aa2c6dc9e98f)
+
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/86116e5e-0c83-4045-9ca7-a324ddb0a07a)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/ecd88f19-9691-4fbe-bf04-5f5e8357842b)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/58281c20-fc1e-4aab-bb0e-ad728f16ba68)
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/813a4fe4-17f5-4c2d-afda-853089b63b7d)
+
+
 
 
