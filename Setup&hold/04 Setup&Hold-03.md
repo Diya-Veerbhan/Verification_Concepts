@@ -37,3 +37,41 @@ Try to imagine the waveforms; it's easy
 * Jo clk-to-Q delay h, vo D-to-Q delay bhi h, both are same for understanding purpose
 ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/802b1a33-e169-4005-8d8d-004a17a49e6a)
 ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/02ad8162-6375-472e-b4ff-8437ae6df615)
+
+
+## Problem - solving
+* ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/8de493e3-4bd9-4cd9-b6fa-6e5356a9083b)
+* Two types of problems :
+* ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/619f0940-9e77-4710-862b-c36f72b4928d)
+
+## Problem-1 Find whether setup or hold time violation is present or not?
+![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/78f0c7b4-e819-4461-9479-ceef3015816c)
+
+* Let's calculate the data path delay and clk path delay
+* Tdata = (wire delay to clk input delay) + (clk to Q delay FF1) + (cell delay of inverter) + (wire delay between buffer and FF2)
+* Tdata =(1,2)+(9,11)+(1,2)+(6,9)+(1,2)
+* Tdata(max)= 2+11+2+9+2=26ns
+* Tdata(min)=1+9+1+6+1=18ns
+* Tclk = (wire delay from clk to buffer input) + (buffer delay) + (wire delay from buffer to FF2)
+* Tclk =(2,3)+(5,9)+(2,3)
+* Tclk(max) = 3+9+3=15ns
+* Tclk(min) = 2+5+2=9ns
+* <b> Remember : Ts = Td(max)-Tclk(min) ; Th = Tclk(max)-Td(min) We wont use these equations but for hold
+  violation data min delay and clk max delay is considered and similarly for setup violation; in order to remember these points, one should remeber these eqns.
+* Also for setup time one extra clk period is added to Tclk. If not given, then Tclk(max) is considered to be clk period </b>
+
+* Hold volation :
+  ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/724ccc9d-9c0c-4f64-b0ee-f0ba49361dac)
+  * From dig, Tclk + Thold <= Tdata ; for no hold violation
+  * Taking respective max, min values Tclk(max) + Thold <= Tdata(min)
+  * 15 + 2 <= 18 ; No hold violation
+
+* Setup violation :
+  ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/d7268e5c-81de-4221-9d75-cebb9293c0a9)
+  * From dig, Tdata + Tsetup <= Tclk: for no setup violation
+  * Taking respective max, min values and adding one clk period in the Tclk delay
+  * Tdata(max) + Tsetup <= Tclk(min) + Tclk(period)/Tclk(max)
+  * 26 + 4 <= 9 + 15 ; 30<= 24 : Setup violation
+  * Now, to remove this violation clk time period can be increased, or less buffer delay in data path
+
+
