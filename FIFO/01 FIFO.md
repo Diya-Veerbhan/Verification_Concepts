@@ -8,11 +8,7 @@
   
   ![image](https://github.com/Diya-Veerbhan/Verification_Concepts/assets/64258231/b76ae5f4-3d56-4462-98fe-652ee7bd75aa)
 
-## Where is FIFO used?
-* Data Structures:
-- Certain data structures like Queue and other variants of Queue uses FIFO approach for processing data. 
-* Data Structures:
-- Certain data structures like Queue and other variants of Queue uses FIFO approach for processing data. 
+## Where is FIFO used? 
 * Data Structures:
 - Certain data structures like Queue and other variants of Queue uses FIFO approach for processing data. 
 * The data structure that implements FIFO is Queue
